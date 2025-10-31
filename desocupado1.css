@@ -1,0 +1,464 @@
+/*
+ * TCA - Projeto Racismo
+ * CSS FINAL - OTIMIZADO, HARMONIZADO e RESPONSIVO com ANIMAÇÕES APRIMORADAS
+ * ATUALIZAÇÃO: Retorno ao TEMA DARK, com o main agora usando TONS DE MARROM ESCURO no gradiente.
+ */
+
+/* Importação de Fonte Externa */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+/* ===================================== */
+/* 1. VARIAVEIS CSS (TEMA DARK COM MAIN EM MARROM) */
+/* ===================================== */
+:root {
+    /* Cores de Base Dark (RESTABELECIDAS) */
+    --cor-fundo-principal: #292929; /* Preto muito escuro */
+    --cor-fundo-secundario: #333333; /* Cinza escuro para o header e seções */
+    --cor-texto-claro: #f5f5f5; /* Texto branco suave */
+    --sombra-dark: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra intensa para tema dark */
+
+    /* Cores de Destaque - Marrom/Ouro Velho/Cobre (mantidas) */
+    --cor-destaque: #8B4513; /* Saddle Brown - Marrom de Sela */
+    --cor-realce-clique: #B8860B; /* Goldenrod - Tom de Ouro Velho */
+    
+    /* Gradiente Principal do MAIN - AGORA EM TONS DE MARROM MAIS ESCUROS PARA O TEMA DARK */
+    --gradiente-main-start: #3d342d; /* Marrom escuro levemente quente */
+    --gradiente-main-mid: #4a413a;   /* Marrom médio */
+    --gradiente-main-end: #5b524a;   /* Marrom mais claro no final */
+    
+    font-size: 16px;
+}
+
+/* ------------------------------------- */
+/* 2. KEYFRAMES (ANIMAÇÕES APRIMORADAS) - MANTIDAS */
+/* ------------------------------------- */
+
+/* Entrada das Seções */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(2.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efeito de Borda Pulsante nos Botões */
+@keyframes pulseBorder {
+    0%, 100% { 
+        border-color: var(--cor-destaque); 
+        box-shadow: 0 0 0 rgba(139, 69, 19, 0); 
+    }
+    50% { 
+        border-color: #f7d383; /* Amarelo/Bege claro */
+        box-shadow: 0 0 0.9375rem rgba(184, 134, 11, 0.8); /* Sombra Goldenrod */
+    }
+}
+
+/* Nova Animação: Fade In para Títulos (entra de baixo para cima) */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(1.25rem); } 
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Nova Animação: Slide In para Texto (entra da esquerda) */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-1.25rem); } 
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ------------------------------------- */
+/* 3. RESET E GERAIS (OTIMIZADOS) */
+/* ------------------------------------- */
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; 
+}
+
+html {
+    scroll-behavior: smooth; 
+    scroll-padding-top: 9.375rem; 
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--cor-fundo-principal); /* Fundo Dark */
+    color: var(--cor-texto-claro); /* Texto Claro */
+    line-height: 1.6; 
+}
+
+/* ------------------------------------- */
+/* 4. CABEÇALHO E NAVEGAÇÃO (HARMONIZADOS) */
+/* ------------------------------------- */
+header {
+    background-color: var(--cor-fundo-secundario); /* Fundo Dark */
+    padding: 0.9375rem 0.625rem; 
+    box-shadow: var(--sombra-dark); /* Sombra Dark */
+    position: sticky; 
+    top: 0;
+    z-index: 100; 
+    transition: background-color 0.3s ease-out; 
+}
+
+nav {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.625rem; 
+    width: 100%;
+    max-width: 75rem; 
+    margin: 0 auto;
+}
+
+.nav-group-original,
+.nav-group-sections {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 0.625rem;
+    flex-wrap: wrap; 
+}
+
+/* ESTILO BASE (BOTÕES DO HEADER) */
+button {
+    background-image: linear-gradient(to right, #4a4a4a, #5a5a5a); /* Gradiente de cinza escuro para os botões */
+    border: 0.125rem solid var(--cor-destaque); /* Borda em Marrom */
+    border-radius: 1.5625rem; 
+    color: var(--cor-texto-claro); /* Texto Claro */
+    cursor: pointer;
+    transition: background-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                border-color 0.8s ease-in-out, 
+                transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease-out,
+                color 0.4s ease-out; 
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.5); /* Sombra Dark */
+    white-space: nowrap; 
+    letter-spacing: 0.03125rem; 
+}
+
+button a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Tipos de Botão */
+.original-btn { 
+    padding: 0.625rem 1.5625rem; 
+    font-size: 1rem; 
+    font-weight: 700;
+}
+.section-btn { 
+    padding: 0.3125rem 0.75rem; 
+    font-size: 0.8rem; 
+    border-color: #6a6a6a; /* Borda cinza suave */
+}
+
+/* HOVER E FOCUS (Efeitos com Goldenrod/Ouro Velho) */
+button:hover, 
+button:focus { 
+    background-image: linear-gradient(to right, var(--cor-destaque), var(--cor-realce-clique)); /* Marrom para Goldenrod */
+    color: var(--cor-fundo-principal); /* Texto para o fundo Dark */
+    transform: translateY(-0.25rem) scale(1.05); 
+    box-shadow: 0 0 1.5625rem var(--cor-realce-clique), 0 0.75rem 1.5rem rgba(0, 0, 0, 0.9); 
+    animation: pulseBorder 2s infinite; 
+    outline: none; 
+}
+
+button:focus-visible {
+    box-shadow: 0 0 0 0.25rem #777, 0 0 1.5625rem var(--cor-destaque);
+}
+
+
+/* ------------------------------------- */
+/* 5. CONTEÚDO PRINCIPAL (MAIN) - GRADIENTE MARROM ESCURO */
+/* ------------------------------------- */
+main {
+    /* Gradiente em tons de Marrom Terroso e Escuro */
+    background-image: linear-gradient(to bottom, 
+                      var(--cor-fundo-principal) 0%, /* Começa com o preto muito escuro do body */
+                      var(--gradiente-main-start) 20%, 
+                      var(--gradiente-main-mid) 50%, 
+                      var(--gradiente-main-end) 100%); 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3.75rem 1.875rem; 
+    gap: 2.8125rem; 
+}
+
+/* Animação de entrada para as seções */
+section {
+    position: relative; 
+    background-color: var(--cor-fundo-secundario); /* Fundo Dark para as seções */
+    border-radius: 0.75rem; 
+    padding: 2.5rem; 
+    width: 90%; 
+    max-width: 59.375rem; 
+    box-shadow: var(--sombra-dark); /* Sombra Dark */
+    text-align: left; 
+    transition: box-shadow 0.4s ease-out, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    border-left: 0.375rem solid var(--cor-destaque); /* Destaque lateral em Marrom */
+    
+    animation: slideIn 0.9s cubic-bezier(0.23, 1, 0.32, 1) both; 
+    
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center; 
+    gap: 2.5rem; 
+    flex-direction: row-reverse; 
+}
+
+section:nth-child(even) {
+    animation-delay: 0.2s; 
+}
+section:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+section:hover {
+    transform: translateY(-0.125rem) scale(1.005); 
+    box-shadow: 0 0.875rem 2.1875rem rgba(0, 0, 0, 0.9); /* Sombra Dark mais intensa no hover */
+}
+
+/* --- TEXTO DENTRO DAS SEÇÕES (ANIMAÇÕES) --- */
+.animated-title {
+    opacity: 0; 
+    animation: fadeInUp 0.7s ease-out 0.4s forwards; 
+}
+
+.animated-text {
+    opacity: 0; 
+    animation: slideInLeft 0.8s ease-out 0.6s forwards; 
+}
+
+.animated-text:nth-of-type(2) { 
+    animation-delay: 0.8s;
+}
+
+/* --- BOTÃO DE VOLTA AO TOPO POR SEÇÃO --- */
+.back-to-top-section {
+    position: absolute; 
+    bottom: 0.3125rem; 
+    right: 0.3125rem; 
+    
+    text-decoration: none; 
+    display: inline-block; 
+    background-color: transparent; 
+    color: #b0b0b0; /* Texto cinza claro */
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3125rem 0.5rem; 
+    border: 0.0625rem solid #777777; /* Borda cinza suave */
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-transform: none;
+    box-shadow: none;
+    transition: all 0.25s ease-out; 
+}
+
+.back-to-top-section:hover,
+.back-to-top-section:focus {
+    color: var(--cor-destaque); 
+    border-color: var(--cor-destaque);
+    background-color: #3a3a3a; /* Fundo cinza escuro no hover */
+    transform: translateY(-0.0625rem) scale(1.02); 
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+/* --- FIM DO BOTÃO --- */
+
+
+.m1 {
+    flex: 0 0 18.75rem; 
+    width: 18.75rem; 
+    height: 12.5rem; 
+    border-radius: 0.5rem;
+    overflow: hidden; 
+}
+
+.m1 img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 0.5rem;
+    border: 0.25rem solid var(--cor-destaque); /* Borda da imagem em Marrom */
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3); /* Sombra Dark */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.m1 img:hover {
+    transform: scale(1.1); 
+}
+
+.text-content {
+    flex: 1; 
+    min-width: 25rem; 
+}
+
+.l1 {
+    margin: 0 0 0.625rem; 
+    font-size: 1.8rem; 
+    color: var(--cor-realce-clique); /* Título em Goldenrod/Ouro Velho */
+    font-weight: 700;
+    border-bottom: 0.1875rem solid #6a6a6a; /* Borda cinza suave */
+    padding-bottom: 0.3125rem;
+}
+
+.l2, .l3 {
+    margin: 0.625rem 0; 
+    font-size: 1.1rem;
+    color: var(--cor-texto-claro); /* Texto Claro */
+    line-height: 1.7; 
+}
+
+/* ------------------------------------- */
+/* 6. RODAPÉ (FOOTER) */
+/* ------------------------------------- */
+footer {
+    background-color: var(--cor-fundo-secundario); /* Fundo Dark */
+    padding: 1.5625rem; 
+    text-align: center;
+    border-top: 0.0625rem solid #6a6a6a; /* Borda cinza suave */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 0.9375rem; 
+}
+
+.scroll-top-btn {
+    text-decoration: none;
+    color: var(--cor-destaque); /* Botão de topo em Marrom */
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 0.9375rem; 
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid var(--cor-destaque); /* Borda em Marrom */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    display: block; 
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4); /* Sombra Dark */
+}
+
+.scroll-top-btn:hover,
+.scroll-top-btn:focus { 
+    background-color: var(--cor-destaque); /* Fundo em Marrom */
+    color: var(--cor-fundo-principal); /* Texto para o fundo Dark */
+    transform: translateY(-0.1875rem) scale(1.05);
+    box-shadow: 0 0.375rem 0.9375rem rgba(139, 69, 19, 0.6); 
+    outline: none;
+}
+
+.q1 {
+    color: #b0b0b0; /* Texto cinza claro */
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* Animação para o texto do footer */
+.q1 .animated-text {
+    animation: fadeInUp 0.7s ease-out 0.9s forwards; 
+}
+
+
+/* ======================================================== */
+/* 7. MEDIA QUERIES (RESPONSIVIDADE OTIMIZADA) - MANTIDAS */
+/* ======================================================== */
+
+/* ------------------------------------- */
+/* PARA TELAS DE ATÉ 768px (TABLETS E MOBILE GRANDE) */
+/* ------------------------------------- */
+@media (max-width: 48rem) { 
+    
+    html {
+        scroll-padding-top: 7.5rem; 
+    }
+
+    header {
+        padding: 0.625rem; 
+    }
+
+    .original-btn {
+        padding: 0.5rem 1.125rem; 
+        font-size: 0.85rem; 
+    }
+    
+    .section-btn {
+        padding: 0.25rem 0.625rem; 
+        font-size: 0.75rem; 
+    }
+
+    section {
+        flex-direction: column; 
+        padding: 1.875rem 1.25rem; 
+        text-align: center; 
+        gap: 1.5625rem; 
+    }
+
+    .text-content {
+        min-width: 100%; 
+    }
+
+    .m1 {
+        height: 12.5rem; 
+    }
+    
+    .l1 {
+        font-size: 1.5rem; 
+        text-align: center;
+        border-bottom: none; 
+        padding-bottom: 0;
+    }
+    
+    .l2, .l3 {
+        font-size: 1rem; 
+        text-align: left; 
+    }
+    
+    /* Reajusta a animação para mobile, pode ser mais sutil */
+    .animated-title { animation: fadeInUp 0.6s ease-out 0.3s forwards; }
+    .animated-text { animation: slideInLeft 0.7s ease-out 0.5s forwards; }
+    .animated-text:nth-of-type(2) { animation-delay: 0.7s; }
+}
+
+/* ------------------------------------- */
+/* PARA TELAS DE ATÉ 480px (SMARTPHONES) */
+/* ------------------------------------- */
+@media (max-width: 30rem) { 
+    
+    html {
+        scroll-padding-top: 9.375rem; 
+    }
+
+    .nav-group-original {
+        justify-content: space-between;
+    }
+    .original-btn {
+        padding: 0.4rem 0.75rem; 
+        font-size: 0.8rem; 
+        flex-basis: 48%; 
+    }
+    
+    .section-btn {
+        padding: 0.1875rem 0.5rem; 
+        font-size: 0.7rem; 
+        flex-basis: 30%; 
+    }
+
+    main {
+        padding: 1.875rem 0.9375rem; 
+        gap: 1.875rem; 
+    }
+    
+    section {
+        padding: 1.25rem 0.9375rem; 
+    }
+    
+    .l1 {
+        font-size: 1.3rem; 
+    }
+    
+    .back-to-top-section {
+        display: none; 
+    }
+}
