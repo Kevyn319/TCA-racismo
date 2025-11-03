@@ -1,37 +1,31 @@
 /*
  * TCA - Projeto Racismo
  * CSS FINAL - OTIMIZADO, HARMONIZADO e RESPONSIVO com ANIMAÇÕES APRIMORADAS
- * ATUALIZAÇÃO: Retorno ao TEMA DARK, com o main agora usando TONS DE MARROM ESCURO no gradiente.
+ * ATUALIZAÇÃO: Responsividade Aprimorada, focando na compactação do Header em Mobile.
+ * BASE: Código estável com fundo ultra-dark.
  */
 
-/* Importação de Fonte Externa */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
-
-/* ===================================== */
 /* 1. VARIAVEIS CSS (TEMA DARK COM MAIN EM MARROM) */
-/* ===================================== */
 :root {
-    /* Cores de Base Dark (RESTABELECIDAS) */
-    --cor-fundo-principal: #292929; /* Preto muito escuro */
-    --cor-fundo-secundario: #333333; /* Cinza escuro para o header e seções */
-    --cor-texto-claro: #f5f5f5; /* Texto branco suave */
-    --sombra-dark: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra intensa para tema dark */
+    /* Cores de Base Dark (MÁXIMO DARK) */
+    --cor-fundo-principal: #121212; /* PRETO ABSOLUTO */
+    --cor-fundo-secundario: #1a1a1a; /* CINZA MUITO ESCURO */
+    --cor-texto-claro: #f5f5f5; 
+    --sombra-dark: 0 4px 12px rgba(0, 0, 0, 0.7); 
 
     /* Cores de Destaque - Marrom/Ouro Velho/Cobre (mantidas) */
-    --cor-destaque: #8B4513; /* Saddle Brown - Marrom de Sela */
-    --cor-realce-clique: #B8860B; /* Goldenrod - Tom de Ouro Velho */
+    --cor-destaque: #8B4513; 
+    --cor-realce-clique: #B8860B; 
     
-    /* Gradiente Principal do MAIN - AGORA EM TONS DE MARROM MAIS ESCUROS PARA O TEMA DARK */
-    --gradiente-main-start: #3d342d; /* Marrom escuro levemente quente */
-    --gradiente-main-mid: #4a413a;   /* Marrom médio */
-    --gradiente-main-end: #5b524a;   /* Marrom mais claro no final */
+    /* Gradiente Principal do MAIN - TONS DE MARROM AGORA ULTRA ESCUROS */
+    --gradiente-main-start: #1c1816; 
+    --gradiente-main-mid: #25201d;  
+    --gradiente-main-end: #2a2522;  
     
     font-size: 16px;
 }
 
-/* ------------------------------------- */
 /* 2. KEYFRAMES (ANIMAÇÕES APRIMORADAS) - MANTIDAS */
-/* ------------------------------------- */
 
 /* Entrada das Seções */
 @keyframes slideIn {
@@ -46,8 +40,8 @@
         box-shadow: 0 0 0 rgba(139, 69, 19, 0); 
     }
     50% { 
-        border-color: #f7d383; /* Amarelo/Bege claro */
-        box-shadow: 0 0 0.9375rem rgba(184, 134, 11, 0.8); /* Sombra Goldenrod */
+        border-color: #f7d383; 
+        box-shadow: 0 0 0.9375rem rgba(184, 134, 11, 0.8); 
     }
 }
 
@@ -63,9 +57,7 @@
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* ------------------------------------- */
 /* 3. RESET E GERAIS (OTIMIZADOS) */
-/* ------------------------------------- */
 * {
     box-sizing: border-box; 
     margin: 0;
@@ -75,23 +67,21 @@
 
 html {
     scroll-behavior: smooth; 
-    scroll-padding-top: 9.375rem; 
+    scroll-padding-top: 7.5rem; 
 }
 
 body {
     min-height: 100vh;
-    background-color: var(--cor-fundo-principal); /* Fundo Dark */
-    color: var(--cor-texto-claro); /* Texto Claro */
+    background-color: var(--cor-fundo-principal); 
+    color: var(--cor-texto-claro); 
     line-height: 1.6; 
 }
 
-/* ------------------------------------- */
 /* 4. CABEÇALHO E NAVEGAÇÃO (HARMONIZADOS) */
-/* ------------------------------------- */
 header {
-    background-color: var(--cor-fundo-secundario); /* Fundo Dark */
+    background-color: var(--cor-fundo-secundario); 
     padding: 0.9375rem 0.625rem; 
-    box-shadow: var(--sombra-dark); /* Sombra Dark */
+    box-shadow: var(--sombra-dark); 
     position: sticky; 
     top: 0;
     z-index: 100; 
@@ -119,10 +109,10 @@ nav {
 
 /* ESTILO BASE (BOTÕES DO HEADER) */
 button {
-    background-image: linear-gradient(to right, #4a4a4a, #5a5a5a); /* Gradiente de cinza escuro para os botões */
-    border: 0.125rem solid var(--cor-destaque); /* Borda em Marrom */
+    background-image: linear-gradient(to right, #4a4a4a, #5a5a5a); 
+    border: 0.125rem solid var(--cor-destaque); 
     border-radius: 1.5625rem; 
-    color: var(--cor-texto-claro); /* Texto Claro */
+    color: var(--cor-texto-claro); 
     cursor: pointer;
     transition: background-image 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                 border-color 0.8s ease-in-out, 
@@ -131,7 +121,7 @@ button {
                 color 0.4s ease-out; 
     text-transform: uppercase;
     font-weight: 600;
-    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.5); /* Sombra Dark */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.5); 
     white-space: nowrap; 
     letter-spacing: 0.03125rem; 
 }
@@ -151,14 +141,14 @@ button a {
 .section-btn { 
     padding: 0.3125rem 0.75rem; 
     font-size: 0.8rem; 
-    border-color: #6a6a6a; /* Borda cinza suave */
+    border-color: #6a6a6a; 
 }
 
 /* HOVER E FOCUS (Efeitos com Goldenrod/Ouro Velho) */
 button:hover, 
 button:focus { 
-    background-image: linear-gradient(to right, var(--cor-destaque), var(--cor-realce-clique)); /* Marrom para Goldenrod */
-    color: var(--cor-fundo-principal); /* Texto para o fundo Dark */
+    background-image: linear-gradient(to right, var(--cor-destaque), var(--cor-realce-clique)); 
+    color: var(--cor-fundo-principal); 
     transform: translateY(-0.25rem) scale(1.05); 
     box-shadow: 0 0 1.5625rem var(--cor-realce-clique), 0 0.75rem 1.5rem rgba(0, 0, 0, 0.9); 
     animation: pulseBorder 2s infinite; 
@@ -170,16 +160,14 @@ button:focus-visible {
 }
 
 
-/* ------------------------------------- */
 /* 5. CONTEÚDO PRINCIPAL (MAIN) - GRADIENTE MARROM ESCURO */
-/* ------------------------------------- */
 main {
     /* Gradiente em tons de Marrom Terroso e Escuro */
     background-image: linear-gradient(to bottom, 
-                      var(--cor-fundo-principal) 0%, /* Começa com o preto muito escuro do body */
-                      var(--gradiente-main-start) 20%, 
-                      var(--gradiente-main-mid) 50%, 
-                      var(--gradiente-main-end) 100%); 
+                                     var(--cor-fundo-principal) 0%, 
+                                     var(--gradiente-main-start) 20%, 
+                                     var(--gradiente-main-mid) 50%, 
+                                     var(--gradiente-main-end) 100%); 
     display: flex;
     flex-direction: column; 
     justify-content: flex-start;
@@ -191,15 +179,15 @@ main {
 /* Animação de entrada para as seções */
 section {
     position: relative; 
-    background-color: var(--cor-fundo-secundario); /* Fundo Dark para as seções */
+    background-color: var(--cor-fundo-secundario); 
     border-radius: 0.75rem; 
     padding: 2.5rem; 
     width: 90%; 
     max-width: 59.375rem; 
-    box-shadow: var(--sombra-dark); /* Sombra Dark */
+    box-shadow: var(--sombra-dark); 
     text-align: left; 
     transition: box-shadow 0.4s ease-out, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-    border-left: 0.375rem solid var(--cor-destaque); /* Destaque lateral em Marrom */
+    border-left: 0.375rem solid var(--cor-destaque); 
     
     animation: slideIn 0.9s cubic-bezier(0.23, 1, 0.32, 1) both; 
     
@@ -219,7 +207,7 @@ section:nth-child(odd) {
 
 section:hover {
     transform: translateY(-0.125rem) scale(1.005); 
-    box-shadow: 0 0.875rem 2.1875rem rgba(0, 0, 0, 0.9); /* Sombra Dark mais intensa no hover */
+    box-shadow: 0 0.875rem 2.1875rem rgba(0, 0, 0, 0.9); 
 }
 
 /* --- TEXTO DENTRO DAS SEÇÕES (ANIMAÇÕES) --- */
@@ -237,7 +225,7 @@ section:hover {
     animation-delay: 0.8s;
 }
 
-/* --- BOTÃO DE VOLTA AO TOPO POR SEÇÃO --- */
+/* --- BOTÃO DE VOLTA AO TOPO POR SEÇÃO (Preservado) --- */
 .back-to-top-section {
     position: absolute; 
     bottom: 0.3125rem; 
@@ -246,11 +234,11 @@ section:hover {
     text-decoration: none; 
     display: inline-block; 
     background-color: transparent; 
-    color: #b0b0b0; /* Texto cinza claro */
+    color: #b0b0b0; 
     font-size: 0.75rem;
     font-weight: 500;
     padding: 0.3125rem 0.5rem; 
-    border: 0.0625rem solid #777777; /* Borda cinza suave */
+    border: 0.0625rem solid #777777; 
     border-radius: 0.5rem;
     cursor: pointer;
     text-transform: none;
@@ -262,7 +250,7 @@ section:hover {
 .back-to-top-section:focus {
     color: var(--cor-destaque); 
     border-color: var(--cor-destaque);
-    background-color: #3a3a3a; /* Fundo cinza escuro no hover */
+    background-color: #3a3a3a; 
     transform: translateY(-0.0625rem) scale(1.02); 
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
     outline: none;
@@ -283,8 +271,8 @@ section:hover {
     height: 100%; 
     object-fit: cover; 
     border-radius: 0.5rem;
-    border: 0.25rem solid var(--cor-destaque); /* Borda da imagem em Marrom */
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3); /* Sombra Dark */
+    border: 0.25rem solid var(--cor-destaque); 
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3); 
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
 }
 
@@ -300,27 +288,25 @@ section:hover {
 .l1 {
     margin: 0 0 0.625rem; 
     font-size: 1.8rem; 
-    color: var(--cor-realce-clique); /* Título em Goldenrod/Ouro Velho */
+    color: var(--cor-realce-clique); 
     font-weight: 700;
-    border-bottom: 0.1875rem solid #6a6a6a; /* Borda cinza suave */
+    border-bottom: 0.1875rem solid #6a6a6a; 
     padding-bottom: 0.3125rem;
 }
 
 .l2, .l3 {
     margin: 0.625rem 0; 
     font-size: 1.1rem;
-    color: var(--cor-texto-claro); /* Texto Claro */
+    color: var(--cor-texto-claro); 
     line-height: 1.7; 
 }
 
-/* ------------------------------------- */
 /* 6. RODAPÉ (FOOTER) */
-/* ------------------------------------- */
 footer {
-    background-color: var(--cor-fundo-secundario); /* Fundo Dark */
+    background-color: var(--cor-fundo-secundario); 
     padding: 1.5625rem; 
     text-align: center;
-    border-top: 0.0625rem solid #6a6a6a; /* Borda cinza suave */
+    border-top: 0.0625rem solid #6a6a6a; 
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -329,28 +315,28 @@ footer {
 
 .scroll-top-btn {
     text-decoration: none;
-    color: var(--cor-destaque); /* Botão de topo em Marrom */
+    color: var(--cor-destaque); 
     font-weight: 600;
     font-size: 1rem;
     padding: 0.5rem 0.9375rem; 
     border-radius: 0.3125rem;
-    border: 0.0625rem solid var(--cor-destaque); /* Borda em Marrom */
+    border: 0.0625rem solid var(--cor-destaque); 
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
     display: block; 
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4); /* Sombra Dark */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4); 
 }
 
 .scroll-top-btn:hover,
 .scroll-top-btn:focus { 
-    background-color: var(--cor-destaque); /* Fundo em Marrom */
-    color: var(--cor-fundo-principal); /* Texto para o fundo Dark */
+    background-color: var(--cor-destaque); 
+    color: var(--cor-fundo-principal); 
     transform: translateY(-0.1875rem) scale(1.05);
     box-shadow: 0 0.375rem 0.9375rem rgba(139, 69, 19, 0.6); 
     outline: none;
 }
 
 .q1 {
-    color: #b0b0b0; /* Texto cinza claro */
+    color: #b0b0b0; 
     font-size: 0.9rem;
     font-weight: 300;
 }
@@ -362,47 +348,57 @@ footer {
 
 
 /* ======================================================== */
-/* 7. MEDIA QUERIES (RESPONSIVIDADE OTIMIZADA) - MANTIDAS */
+/* 7. MEDIA QUERIES (RESPONSIVIDADE OTIMIZADA) */
 /* ======================================================== */
 
 /* ------------------------------------- */
-/* PARA TELAS DE ATÉ 768px (TABLETS E MOBILE GRANDE) */
+/* PARA TELAS DE ATÉ 768px (TABLETS E MOBILE GRANDE) - 48rem */
 /* ------------------------------------- */
 @media (max-width: 48rem) { 
     
     html {
-        scroll-padding-top: 7.5rem; 
+        scroll-padding-top: 6.25rem; 
     }
 
     header {
         padding: 0.625rem; 
     }
 
+    /* Botões do header: Mais espaço */
     .original-btn {
         padding: 0.5rem 1.125rem; 
         font-size: 0.85rem; 
+        flex-basis: 48%; 
     }
     
     .section-btn {
         padding: 0.25rem 0.625rem; 
         font-size: 0.75rem; 
+        flex-basis: auto;
+        min-width: 25%;
     }
 
+    /* Seções SEMPRE empilhadas */
     section {
         flex-direction: column; 
-        padding: 1.875rem 1.25rem; 
         text-align: center; 
+        padding: 1.875rem 1.25rem; 
         gap: 1.5625rem; 
+    }
+    
+    /* Imagem centralizada na coluna mobile */
+    .m1 {
+        flex-basis: auto; 
+        width: 100%;
+        height: 15rem; 
+        max-width: 14rem; 
+        margin: 0 auto;
     }
 
     .text-content {
         min-width: 100%; 
     }
 
-    .m1 {
-        height: 12.5rem; 
-    }
-    
     .l1 {
         font-size: 1.5rem; 
         text-align: center;
@@ -412,37 +408,59 @@ footer {
     
     .l2, .l3 {
         font-size: 1rem; 
-        text-align: left; 
+        text-align: center; 
     }
     
-    /* Reajusta a animação para mobile, pode ser mais sutil */
-    .animated-title { animation: fadeInUp 0.6s ease-out 0.3s forwards; }
-    .animated-text { animation: slideInLeft 0.7s ease-out 0.5s forwards; }
-    .animated-text:nth-of-type(2) { animation-delay: 0.7s; }
+    /* Botão de volta ao topo por seção se torna estático e centralizado */
+    .back-to-top-section {
+        position: static; 
+        margin-top: 0.625rem;
+        padding: 0.25rem 0.5rem;
+    }
 }
 
 /* ------------------------------------- */
-/* PARA TELAS DE ATÉ 480px (SMARTPHONES) */
+/* PARA TELAS DE ATÉ 480px (SMARTPHONES) - 30rem */
 /* ------------------------------------- */
 @media (max-width: 30rem) { 
     
     html {
-        scroll-padding-top: 9.375rem; 
+        scroll-padding-top: 5.625rem; 
     }
 
+    /* OTIMIZAÇÃO DE TIPOGRAFIA: Fonte menor e mais compacta para texto corrido */
+    .l2, .l3 {
+        font-size: 0.9rem; 
+        line-height: 1.5;
+    }
+
+    /* Botões de navegação no topo (Menu) */
     .nav-group-original {
-        justify-content: space-between;
+        /* MANTIDO: Coloca os botões principais em coluna */
+        flex-direction: column; 
+        width: 100%;
     }
     .original-btn {
-        padding: 0.4rem 0.75rem; 
-        font-size: 0.8rem; 
-        flex-basis: 48%; 
+        flex-basis: 100%; 
+        margin: 0.15rem 0;
+        padding: 0.5rem 1rem; 
     }
     
+    .nav-group-sections {
+        /* NOVO: Faz os botões de seção tentarem ficar na mesma linha, quebrando se preciso */
+        justify-content: space-around;
+        gap: 0.4rem;
+        width: 100%;
+    }
+
     .section-btn {
-        padding: 0.1875rem 0.5rem; 
-        font-size: 0.7rem; 
-        flex-basis: 30%; 
+        /* AJUSTE: Permite que os botões de seção sejam flexíveis em tamanho */
+        flex-grow: 1; 
+        flex-shrink: 1;
+        flex-basis: auto; /* Remove a limitação de 48% para que o espaçamento seja mais fluido */
+        min-width: unset;
+        font-size: 0.7rem; /* Leve redução para caberem mais */
+        padding: 0.3rem 0.5rem;
     }
 
     main {
@@ -455,9 +473,15 @@ footer {
     }
     
     .l1 {
-        font-size: 1.3rem; 
+        font-size: 1.2rem; 
     }
     
+    /* Botão de volta ao topo no footer, menor */
+    .scroll-top-btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+    }
+
     .back-to-top-section {
         display: none; 
     }
